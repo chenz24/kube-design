@@ -112,7 +112,13 @@ export const Steps = forwardRef<StepsProps, 'div'>(
       );
 
       if (index !== _children.length - 1 && variant === 'default') {
-        acc.push(<StepsSeparator $active={index < active} key={`separator-${index}`} />);
+        acc.push(
+          <StepsSeparator
+            $active={index < active}
+            $vertical={orientation === 'vertical'}
+            key={`separator-${index}`}
+          />
+        );
       }
 
       return acc;
@@ -123,7 +129,11 @@ export const Steps = forwardRef<StepsProps, 'div'>(
     const content = active > _children.length - 1 ? completedContent : stepContent;
 
     return (
-      <StepsRoot ref={ref} className={cx('steps-root', classNames)} {...rest}>
+      <StepsRoot
+        ref={ref}
+        className={cx('steps-root', classNames, { 'steps-vertical': orientation === 'vertical' })}
+        {...rest}
+      >
         <StepsWrapper className={cx('steps-wrapper', { 'steps-tab': variant === 'tab' })}>
           {items}
         </StepsWrapper>
