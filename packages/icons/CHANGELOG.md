@@ -1,5 +1,11 @@
 # @kubed/icons
 
+## 1.0.0
+
+### Major Changes
+
+- [`86b339c`](https://github.com/kubesphere/kube-design/commit/86b339c6e3080a44c92a549de3a0e81d9067bc83) Thanks [@donniean](https://github.com/donniean)! - add filebox icon
+
 ## 0.0.10
 
 ### Patch Changes
